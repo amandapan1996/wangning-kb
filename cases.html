@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>创业与融资 - 王宁·泡泡玛特</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #0c0c10; --surface: #13131a; --surface-2: #1a1a24; --border: #252530; --text: #e8e8f0; --text-2: #9090a8; --text-3: #5a5a70; --accent: #e879f9; --accent-2: #c084fc; --accent-glow: rgba(232,121,249,0.15); --gold: #f59e0b; }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(12,12,16,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 2rem; }
+    nav .inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-size: 1rem; font-weight: 700; }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.25rem; }
+    .nav-links a { background: none; border: none; color: var(--text-3); font-size: 0.9rem; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+    .nav-links a.active { color: var(--accent); background: var(--accent-glow); }
+    main { max-width: 900px; margin: 0 auto; padding: 80px 1.5rem 4rem; }
+    .page-header { padding: 3rem 0 2rem; }
+    .page-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .page-header h1 .accent { color: var(--accent); }
+    .page-header .subtitle { font-size: 1rem; color: var(--text-2); }
+    .stats-row { display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .stat-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; text-align: center; flex: 1; min-width: 120px; }
+    .stat-box .num { font-size: 1.8rem; font-weight: 800; color: var(--gold); }
+    .stat-box .label { font-size: 0.75rem; color: var(--text-3); margin-top: 0.25rem; }
+    .content-block { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+    .content-block h2 { color: var(--accent-2); font-size: 1.2rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .content-block p { color: var(--text-2); margin-bottom: 1rem; font-size: 0.95rem; }
+    .content-block blockquote { border-left: 3px solid var(--accent); padding-left: 1.25rem; font-style: italic; color: var(--text-2); font-size: 0.9rem; margin: 1rem 0; }
+    .content-block blockquote .attr { display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.8rem; color: var(--text-3); }
+    .timeline { border-left: 2px solid var(--border); margin-left: 0.5rem; padding-left: 1.5rem; }
+    .timeline-item { position: relative; margin-bottom: 1.5rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -1.75rem; top: 0.25rem; width: 0.75rem; height: 0.75rem; background: var(--accent); border-radius: 50%; }
+    .timeline-item .year { font-size: 0.75rem; color: var(--accent); font-weight: 700; margin-bottom: 0.25rem; }
+    .timeline-item .event { font-size: 0.9rem; color: var(--text-2); }
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--text-3); font-size: 0.8rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="inner">
+      <div class="nav-logo">王宁<span class="dot">·</span>泡泡玛特</div>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="philosophy.html">核心哲学</a>
+        <a href="ip-brand.html">IP与品牌</a>
+        <a href="globalization.html">全球化</a>
+        <a href="management.html">管理</a>
+        <a href="cases.html" class="active">创业融资</a>
+        <a href="quotes.html">金句</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="page-header">
+      <h1>创业与融资<span class="accent"></span></h1>
+      <p class="subtitle">IPO前仅融资8000万、356倍新股认购、估值哲学……</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box"><div class="num">~8000万</div><div class="label">IPO前融资总额</div></div>
+      <div class="stat-box"><div class="num">356倍</div><div class="label">新股认购倍数</div></div>
+      <div class="stat-box"><div class="num">1000亿+</div><div class="label">上市开盘市值(港元)</div></div>
+      <div class="stat-box"><div class="num">0</div><div class="label">2017年后拿投资人钱</div></div>
+    </div>
+
+    <div class="content-block">
+      <h2>📅 创业时间线</h2>
+      <div class="timeline">
+        <div class="timeline-item"><div class="year">1987</div><div class="event">王宁出生</div></div>
+        <div class="timeline-item"><div class="year">2005</div><div class="event">入读郑州西亚斯学院（广告学专业）</div></div>
+        <div class="timeline-item"><div class="year">2009</div><div class="event">大学毕业，在教育科技公司和新浪工作</div></div>
+        <div class="timeline-item"><div class="year">2010.11</div><div class="event">在北京开设第一家泡泡玛特门店</div></div>
+        <div class="timeline-item"><div class="year">2013</div><div class="event">开始寻求融资，金额相对较少</div></div>
+        <div class="timeline-item"><div class="year">2014</div><div class="event">开始"减宽加深"，聚焦潮玩赛道；入读北大光华MBA</div></div>
+        <div class="timeline-item"><div class="year">2015</div><div class="event">注意到MOLLY，开始签约独家IP</div></div>
+        <div class="timeline-item"><div class="year">2016</div><div class="event">聚焦潮玩，减少外采，开始自建供应链</div></div>
+        <div class="timeline-item"><div class="year">2017</div><div class="event">公司开始盈利；文德一入职，开始筹备全球化；不再拿投资人钱</div></div>
+        <div class="timeline-item"><div class="year">2019</div><div class="event">从新三板退市</div></div>
+        <div class="timeline-item"><div class="year">2020.12.11</div><div class="event">香港主板上市，新股认购超356倍，开盘市值1000余亿港元</div></div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2>💰 融资哲学：不要总盯着估值</h2>
+      <blockquote>「如果你能自己造血，就不要轻易拿钱。钱是有代价的。」<span class="attr">— 王宁</span></blockquote>
+      <p><strong>为什么少拿钱反而是优势？</strong></p>
+      <p>1. <strong>估值空间更大</strong>：起点低，成长空间就大；起点高，后面的人就很难再赚钱</p>
+      <p>2. <strong>不受资本裹挟</strong>：没有大钱进来，就不会有投资人逼着你追风口、追规模</p>
+      <p>3. <strong>保持灵活性</strong>：小公司转型容易，大公司调头难</p>
+      <p>4. <strong>团队更专注</strong>：没有豪华的办公室、没有高昂的人力成本，团队反而更务实</p>
+      <p><strong>融资时机</strong>：2017年后不再拿投资人的钱，因为公司已经能自己造血了</p>
+    </div>
+
+    <div class="content-block">
+      <h2>🚫 为什么投资人错过了泡泡玛特？</h2>
+      <p><strong>赛道问题</strong>：</p>
+      <p>• 2010-2013年，移动互联网是最大的风口</p>
+      <p>• 泡泡玛特做的是线下零售，看起来太"传统"</p>
+      <p>• 潮玩不是"刚需、痛点、高频"的产品</p>
+      <p><strong>骑手（王宁）的问题</strong>：</p>
+      <p>• 学历平平（郑州西亚斯学院）</p>
+      <p>• 没正经上过班（创业前只工作了一年多）</p>
+      <p>• 没有精英团队</p>
+      <p>• 说话没有感染力</p>
+      <p><strong>商业模式的演化</strong>：</p>
+      <p>• 没有人能想到一家"杂货铺"能演变成潮玩领军企业</p>
+      <blockquote>「从A出发，中间做了B，因为C而成功，最后可能是在D上变得伟大。」<span class="attr">— 王宁</span></blockquote>
+    </div>
+
+    <div class="content-block">
+      <h2>🔄 从新三板到港股</h2>
+      <p>2019年从新三板退市，2020年转战港股。逻辑：新三板流动性差，不能满足公司的发展需要。</p>
+      <p>对比同期的巨头：美团同期跌68%、阿里跌77%、腾讯跌64%——泡泡玛特的上市时机并非最优，但结果依然亮眼。</p>
+    </div>
+
+    <div class="content-block">
+      <h2>🎯 选投资项目的标准</h2>
+      <blockquote>「我做LP有50%的原因是报恩。当年你的基金支持过我，你现在做新的基金，那我也应该支持你，滴水之恩当涌泉相报。」<span class="attr">— 王宁</span></blockquote>
+      <p><strong>王宁选择投资的标准</strong>：</p>
+      <p>1. <strong>报恩</strong>：当年支持过泡泡玛特的人</p>
+      <p>2. <strong>人的因素</strong>：是不是做过成的事情的人</p>
+      <p>3. <strong>方向</strong>：是不是在做正确的事情</p>
+    </div>
+
+    <footer>
+      <p>📚 来源：《因为独特》李翔 · 著 | 王宁·泡泡玛特知识库</p>
+    </footer>
+  </main>
+</body>
+</html>

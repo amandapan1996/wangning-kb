@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王宁·泡泡玛特 - 因为独特</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0c0c10;
+      --surface: #13131a;
+      --surface-2: #1a1a24;
+      --border: #252530;
+      --text: #e8e8f0;
+      --text-2: #9090a8;
+      --text-3: #5a5a70;
+      --accent: #e879f9;      /* 紫色 - 泡泡玛特主题色 */
+      --accent-2: #c084fc;
+      --accent-glow: rgba(232, 121, 249, 0.15);
+      --gold: #f59e0b;
+      --green: #10b981;
+      --blue: #3b82f6;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(12, 12, 16, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 2rem;
+    }
+    nav .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo .dot { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.25rem; }
+    .nav-links button {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .nav-links button:hover { color: var(--text); background: var(--surface-2); }
+    .nav-links button.active { color: var(--accent); background: var(--accent-glow); }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 1.5rem 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(232, 121, 249, 0.1);
+      border: 1px solid rgba(232, 121, 249, 0.25);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      color: var(--accent-2);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-2);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem 0;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+    }
+    .stat .label {
+      font-size: 0.85rem;
+      color: var(--text-3);
+      margin-top: 0.25rem;
+    }
+
+    /* Section cards */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+      display: block;
+    }
+    .section-card:hover {
+      border-color: var(--accent);
+      background: var(--surface-2);
+      transform: translateY(-2px);
+    }
+    .section-card .card-emoji { font-size: 2rem; margin-bottom: 0.75rem; }
+    .section-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .section-card p { font-size: 0.85rem; color: var(--text-2); }
+    .section-card .arrow { float: right; color: var(--accent); }
+
+    /* Principles */
+    .principles {
+      padding: 3rem 0;
+    }
+    .principles h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .principle-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .principle-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .principle-item h4 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .principle-item p {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-3);
+      font-size: 0.8rem;
+      margin-top: 3rem;
+    }
+
+    /* Quote block */
+    .quote-block {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+      font-size: 1.05rem;
+      color: var(--text-2);
+      font-style: italic;
+    }
+    .quote-block .author {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-3);
+      font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+      .section-grid, .principle-list { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+      .stats { gap: 1.5rem; }
+      .stat .num { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="inner">
+      <div class="nav-logo">王宁<span class="dot">·</span>泡泡玛特</div>
+      <div class="nav-links">
+        <button onclick="location.href='index.html'" class="active">首页</button>
+        <button onclick="location.href='philosophy.html'">核心哲学</button>
+        <button onclick="location.href='ip-brand.html'">IP与品牌</button>
+        <button onclick="location.href='globalization.html'">全球化</button>
+        <button onclick="location.href='management.html'">管理</button>
+        <button onclick="location.href='cases.html'">创业融资</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">📖 《因为独特》李翔 · 著</div>
+      <h1>泡泡玛特创始人<span class="accent"><br>王宁的商业世界</span></h1>
+      <p class="hero-desc">一家被投资圈长期忽视的公司，如何从线下杂货铺蜕变成潮玩行业的定义者？</p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">2010</div>
+          <div class="label">公司成立</div>
+        </div>
+        <div class="stat">
+          <div class="num">65</div>
+          <div class="label">章节字数</div>
+        </div>
+        <div class="stat">
+          <div class="num">63亿</div>
+          <div class="label">2023年营收</div>
+        </div>
+        <div class="stat">
+          <div class="num">3400万+</div>
+          <div class="label">注册会员</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-block">
+      "我们是从A出发，中间做了B，因为C而成功，最后可能是在D上变得伟大。"
+      <span class="author">— 王宁，泡泡玛特创始人</span>
+    </div>
+
+    <section class="section-grid">
+      <a href="philosophy.html" class="section-card">
+        <div class="card-emoji">💡</div>
+        <h3>核心商业哲学 <span class="arrow">→</span></h3>
+        <p>唱片公司模型、减宽加深、品牌代差……12条核心商业原则</p>
+      </a>
+      <a href="ip-brand.html" class="section-card">
+        <div class="card-emoji">🎨</div>
+        <h3>IP与品牌战略 <span class="arrow">→</span></h3>
+        <p>如何发现、运营和维护一个有生命的IP？泡泡玛特的IP方法论</p>
+      </a>
+      <a href="globalization.html" class="section-card">
+        <div class="card-emoji">🌏</div>
+        <h3>全球化战略 <span class="arrow">→</span></h3>
+        <p>从高往低走：先啃伦敦、巴黎最难啃的骨头，再渗透全球</p>
+      </a>
+      <a href="management.html" class="section-card">
+        <div class="card-emoji">🧭</div>
+        <h3>管理哲学 <span class="arrow">→</span></h3>
+        <p>用"三"思考、四种状态、偏浪漫主义的管理方式</p>
+      </a>
+      <a href="cases.html" class="section-card">
+        <div class="card-emoji">💰</div>
+        <h3>创业与融资 <span class="arrow">→</span></h3>
+        <p>IPO前仅融资8000万、356倍新股认购、估值哲学……</p>
+      </a>
+      <a href="quotes.html" class="section-card">
+        <div class="card-emoji">💬</div>
+        <h3>金句语录 <span class="arrow">→</span></h3>
+        <p>王宁的商业思考精华，12条核心金句</p>
+      </a>
+    </section>
+
+    <section class="principles">
+      <h2>🔑 核心商业原则</h2>
+      <div class="principle-list">
+        <div class="principle-item">
+          <h4>🎵 唱片公司模型</h4>
+          <p>艺术追求独特，商业追求普遍。泡泡玛特用唱片公司的逻辑，把独特的艺术规模化、大众化。</p>
+        </div>
+        <div class="principle-item">
+          <h4>📉 减宽加深</h4>
+          <p>减少宽度，加大深度。不追求什么都做，而是在选定的领域做到极致。</p>
+        </div>
+        <div class="principle-item">
+          <h4>🏔 先啃最难啃的骨头</h4>
+          <p>线下策略从高往低走：在伦敦、巴黎最难的地方证明自己，再下沉就容易了。</p>
+        </div>
+        <div class="principle-item">
+          <h4>✂️ 每天剪枝</h4>
+          <p>迭代不是定期的大改革，而是每天都在发生。企业每一天都要剪枝。</p>
+        </div>
+        <div class="principle-item">
+          <h4>👥 人比事更重要</h4>
+          <p>投资就是投人。泡泡玛特早期投资人看不懂商业模式，但王宁的团队让人愿意相信。</p>
+        </div>
+        <div class="principle-item">
+          <h4>🌱 向上努力，向外看</h4>
+          <p>不盯着国内，向外看：参考乐高、万代南梦宫、迪士尼这些全球最优秀的公司。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>📚 知识库来源：《因为独特》李翔 · 著 | 投资大佬agent知识库</p>
+      <p>⚠️ 本网站仅供学习交流，不构成任何投资建议</p>
+    </footer>
+  </main>
+</body>
+</html>
